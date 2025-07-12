@@ -6,22 +6,26 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="menu">
-    <img src="assets/textures/title.png" id="title" alt="Title" width="300" />
+  <div id="menu" style="display:flex; flex-direction: column; align-items:center; margin-top:100px;">
+    <img src="assets/textures/title.png" id="title" alt="タイトル" width="300" />
     <button id="start-button">スタート</button>
   </div>
 
-  <canvas id="gameCanvas" width="480" height="640"></canvas>
+  <canvas id="gameCanvas" width="480" height="640" style="display:none;"></canvas>
 
-  <div id="hp-bar"><div id="hp-fill"></div></div>
-  <div id="lives">残機: 3</div>
+  <div id="hp-bar" style="position:fixed; top:10px; left:50%; transform:translateX(-50%); width:400px; height:14px; background:#333; border-radius:7px; overflow:hidden;">
+    <div id="hp-fill" style="height:100%; width:100%; background:lime; border-radius:7px; transition: width 0.3s ease;"></div>
+  </div>
 
-  <div id="result" style="display:none;">
+  <div id="lives" style="position:fixed; top:30px; right:20px; color:white; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:20px;">
+    残機: 3
+  </div>
+
+  <div id="result" style="display:none; flex-direction: column; align-items:center; margin-top:100px; color:white; font-family:'Segoe UI', sans-serif;">
     <h1>🎉 クリア！ 🎉</h1>
     <button id="back-to-menu">メニューに戻る</button>
   </div>
 
-  <!-- BGM / SE -->
   <audio id="menu-bgm" loop src="assets/sounds/menu_bgm.mp3"></audio>
   <audio id="game-bgm" loop src="assets/sounds/game_bgm.mp3"></audio>
 
