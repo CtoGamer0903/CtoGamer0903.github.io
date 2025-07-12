@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Countryballs at War</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    canvas {
-      border: 2px solid black;
-      background-color: white;
-    }
-  </style>
+  <title>弾幕ゲーム</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="gameCanvas" width="800" height="600"></canvas>
+  <div id="menu">
+    <img src="assets/textures/title.png" id="title" alt="Title" width="300" />
+    <button id="start-button">スタート</button>
+  </div>
+
+  <canvas id="gameCanvas" width="480" height="640"></canvas>
+
+  <div id="hp-bar"><div id="hp-fill"></div></div>
+  <div id="lives">残機: 3</div>
+
+  <div id="result" style="display:none;">
+    <h1>🎉 クリア！ 🎉</h1>
+    <button id="back-to-menu">メニューに戻る</button>
+  </div>
+
+  <!-- BGM / SE -->
+  <audio id="menu-bgm" loop src="assets/sounds/menu_bgm.mp3"></audio>
+  <audio id="game-bgm" loop src="assets/sounds/game_bgm.mp3"></audio>
+
   <script src="main.js"></script>
 </body>
 </html>
